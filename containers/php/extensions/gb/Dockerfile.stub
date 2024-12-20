@@ -1,0 +1,10 @@
+#####################################
+# PHP GD
+#####################################
+RUN apt-get install -y libjpeg-dev libpng-dev libwebp-dev libxpm-dev && \
+        docker-php-ext-configure gd \
+                   --enable-gd \
+                   --with-webp \
+                   --with-jpeg \
+                   --with-xpm \
+        && docker-php-ext-install gd

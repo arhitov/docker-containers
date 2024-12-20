@@ -1,0 +1,11 @@
+name: php-cli
+choose:
+  question: "Выберите версию"
+  list:
+    - "8.2"
+    - "8.3"
+    - "8.4"
+  key: "versions"
+versions:
+  "8.2":
+    name: php-cli-8.2

@@ -1,0 +1,27 @@
+name: php-fpm
+choose:
+  question: "Выберите версию"
+  list:
+    - "8.2"
+    - "8.3"
+    - "8.4"
+  key: "versions"
+versions:
+  "8.2":
+    name: php-fpm-8.2
+    folder: "../versions/php-fpm-8_2"
+  "8.3":
+    name: php-fpm-8.3
+    folder: "../versions/php-fpm-8_3"
+  "8.4":
+    name: php-fpm-8.4
+    folder: "../versions/php-fpm-8_4"
+    extensions:
+      - qwe
+extensions:
+  zip:
+    name: ZIP
+#    folder: "../extensions/zip"
+  gb:
+    name: GB
+#    folder: "../extensions/gb"

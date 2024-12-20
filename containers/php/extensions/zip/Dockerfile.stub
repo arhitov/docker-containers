@@ -1,0 +1,5 @@
+#####################################
+# PHP Zip:
+#####################################
+RUN apt-get install -y libzip-dev zip unzip \
+        && docker-php-ext-install zip
