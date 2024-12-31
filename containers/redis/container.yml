@@ -1,1 +1,10 @@
-name: Redis
+name: 'Redis'
+type: 'cache'
+dockerfile: False
+env:
+  - name: 'REDIS_VERSION'
+    group: 'REDIS'
+    default: 'latest'
+  - name: 'REDIS_FORWARD_PORT'
+    group: 'REDIS'
+    default: '6379'

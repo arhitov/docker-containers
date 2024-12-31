@@ -1,0 +1,6 @@
+################################################
+# PHP Memcached:
+################################################
+RUN apt-get install -y libmemcached-dev && \
+    pecl -q install memcached --enable-memcache-session=no && \
+    docker-php-ext-enable memcached

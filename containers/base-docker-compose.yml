@@ -1,0 +1,12 @@
+version: "3"
+
+# Default Networks
+networks:
+  application-network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: '${DOCKER_NETWORK_BRIDGE_NAME}'
+      com.docker.network.bridge.host_binding_ipv4: "172.20.0.1"
+    ipam:
+      config:
+        - subnet: "172.20.0.0/16"

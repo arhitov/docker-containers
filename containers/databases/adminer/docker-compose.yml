@@ -1,0 +1,9 @@
+services:
+  adminer:
+    # container_name: adminer
+    image: 'adminer:${ADMINER_VERSION:-latest}'
+    restart: '${DOCKER_CONTAINER_RESTART}'
+    ports:
+      - 8080:8080
+    networks:
+      - application-network

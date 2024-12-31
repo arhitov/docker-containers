@@ -1,0 +1,15 @@
+#####################################
+#  Install cron and SuperVisor
+#####################################
+RUN apt-get install -y \
+        cron \
+        supervisor
+
+# SupetVisor
+COPY etc/supervisor.conf /etc/supervisor/supervisord.conf
+
+# Cron
+COPY etc/crontab.conf /etc/cron.d/site-cron
+RUN chmod 0644 /etc/cron.d/site-cron
+RUN crontab -u www-data /etc/cron.d/site-cron
+RUN mkfifo --mode 0666 /var/log/stdout-cron

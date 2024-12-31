@@ -1,0 +1,19 @@
+name: 'NGINX'
+type: 'frontend'
+dockerfile: False
+env:
+  - name: 'NGINX_VERSION'
+    default: 'latest'
+  - name: 'FRONTEND_PORT'
+    default: '80'
+  - name: 'FRONTEND_PORT_SSL'
+    default: '443'
+folders:
+  - patch: 'log/nginx'
+    chmod:
+      mode: '0777'
+#      owner: www-data
+#      group: www-data
+files:
+  - file: 'nginx.conf'
+    to: 'etc/nginx'

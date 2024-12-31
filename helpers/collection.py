@@ -1,8 +1,8 @@
-from typing import Union, List
+from typing import List
 
 
 class Collection:
-    def __init__(self, _list: Union[List[str], dict]):
+    def __init__(self, _list: List[str] | dict):
         self._list = _list
 
     def is_empty(self) -> bool:

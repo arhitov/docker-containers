@@ -1,0 +1,7 @@
+name: 'Adminer'
+type: 'tools'
+dockerfile: False
+env:
+  - name: 'ADMINER_VERSION'
+    group: 'ADMINER'
+    default: 'latest'

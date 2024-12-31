@@ -1,0 +1,25 @@
+services:
+  redis:
+    # container_name: redis
+    image: 'redis:${REDIS_VERSION:-latest}'
+    command: redis-server --syslog-enabled yes --syslog-ident redis --appendonly yes --replica-read-only no --loglevel notice --logfile ""
+    restart: '${DOCKER_CONTAINER_RESTART}'
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    ports:
+      - '${REDIS_FORWARD_PORT:-6379}:6379'
+    volumes:
+      - 'storage-redis:/data'
+    networks:
+      - application-network
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      retries: 3
+      timeout: 5s
+
+volumes:
+  storage-redis:
+    driver: local

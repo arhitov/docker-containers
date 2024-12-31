@@ -1,0 +1,13 @@
+env:
+  - name: 'DOCKER_CONTAINER_RESTART'
+    group: 'DOCKER'
+    default: 'restart'
+    enums:
+      - 'no'
+      - 'restart'
+      - 'always'
+      - 'on-failure'
+      - 'unless-stopped'
+  - name: 'DOCKER_NETWORK_BRIDGE_NAME'
+    group: 'DOCKER'
+    default: 'app-network-bridge'

@@ -1,0 +1,4 @@
+#####################################
+# PHP BCMath Arbitrary Precision Mathematics
+#####################################
+RUN docker-php-ext-install bcmath

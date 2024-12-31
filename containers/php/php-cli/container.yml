@@ -1,11 +1,64 @@
-name: php-cli
+name: 'PHP CLI'
+type: 'application'
 choose:
-  question: "Выберите версию"
+  question: 'Please select a version'
   list:
-    - "8.2"
-    - "8.3"
-    - "8.4"
-  key: "versions"
-versions:
-  "8.2":
-    name: php-cli-8.2
+    - name: php-cli-8.2
+#      files:
+#        - file: 'php.ini'
+#          to: 'etc/php'
+    - name: php-cli-8.3
+#      files:
+#        - file: 'php.ini'
+#          to: 'etc/php'
+    - name: php-cli-8.4
+#      files:
+#        - file: 'php.ini'
+#          to: 'etc/php'
+extensions:
+  git:
+    name: 'Git'
+  zip:
+    name: 'PHP Zip'
+#    folder: '../extensions/zip'
+  gb:
+    name: 'GB'
+#    folder: '../extensions/gb'
+  bcmath:
+    name: 'PHP BCMath Arbitrary Precision Mathematics'
+  redis:
+    name: 'PHP Redis'
+  memcached:
+    name: 'PHP Memcached'
+  opcache:
+    name: 'PHP Opcache'
+  imagemagick:
+    name: 'PHP Imagick'
+  exif:
+    name: 'PHP Exif'
+  pcntl:
+    name: 'PHP Pcntl (Required for laravel horizon)'
+  intl:
+    name: 'PHP intl (Internalization support)'
+  soap:
+    name: 'PHP soap'
+  pgsql:
+    name: 'PHP PDO PostgreSQL'
+  mysqli:
+    name: 'PHP PDO Mysqli'
+  gettext:
+    name: 'PHP gettext'
+  sockets:
+    name: 'PHP sockets'
+  sync:
+    name: 'Pecl Sync'
+
+env:
+  - name: 'WWWUSER'
+    default: 'www-data'
+  - name: 'WWWGROUP'
+    default: 'www-data'
+
+files:
+  - file: 'Dockerfile'
+    to: 'docker'

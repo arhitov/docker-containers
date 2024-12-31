@@ -1,0 +1,74 @@
+{
+  "Hello world": "Привет мир",
+  "Hello, :1": "Привет, :1",
+  "Docker container builder": "Сборщик докер контейнеров",
+  "The directory where the files will be saved. The directory must be writable. Relative or full path.": "Каталог куда будет сохранены файлы. Каталог должен быть доступен на запись. Относительный или полный путь.",
+  "You have selected containers: ": "Вы выбрали контейнеры: ",
+
+
+  "### make.py ###": "",
+  "The specified output directory does not exist": "Указанный выходной каталог не существует",
+  "The specified output directory is not writable": "Указанный выходной каталог недоступен для записи",
+  "The specified output directory is not empty": "Указанный выходной каталог не является пустым",
+  "Create a catalog?": "Создать каталог?",
+
+  "### libs/question.py ###": "",
+  "Please enter \"Yes\" or \"No\".": "Пожалуйста, введите \"Yes\" или \"No\".",
+
+  "### libs/choicer_list.py ###": "",
+  "Available choice: ": "Доступный выбор: ",
+  "The list must not be empty!": "Список не должен быть пустым!",
+  "You need to select something. Try again.": "Нужно что-то выбрать. Попробуйте снова.",
+  "Invalid selection: \":1\". Please try again.": "Недопустимый выбор: \":1\". Попробуйте снова.",
+  "Input error. Use only numbers.": "Ошибка ввода. Используйте только цифры.",
+  "Select number": "Выберите номер",
+  "Select number :1": "Выберите номер :1",
+  "Select numbers separated by spaces": "Выберите номера через пробел",
+  "Select numbers :1 separated by space": "Выберите номера :1 через пробел",
+  "enter * to select all": "введите * для выбора всех",
+  "press Enter to skip": "нажмите Enter для пропуска",
+
+  "### libs/file_systems/directory.py ###": "",
+  "The specified path \":1\" is not a directory.": "Указанный путь \":1\" не является каталогом.",
+
+  "### libs/container/collector.py ###": "",
+  "Variable \":1\"": "Переменная \":1\"",
+  "Default value is \":1\"": "Значение по умолчанию \":1\"",
+  "meanings": "значения",
+  "Container \":1\"": "Контейнер \":1\"",
+  "Key \"folder\" is not defined for :1. Please correct the configuration file.": "Ключ \"folder\" не определена для :1. Пожалуйста, исправьте файл конфигурации.",
+  "extensions": "расширения",
+  "You have selected extensions: :1": "Вы выбрали расширения: :1",
+  "There is no \"Dockerfile.stub\" for extension \":1/:2\". :3": "Для расширения \":1/:2\" отсутствует \"Dockerfile.stub\". :3",
+
+  "### libs/container/choicer.py ###": "",
+  "Block \":1\" has internal divisions": "Блок \":1\" имеет внутренние деления",
+  "Unknown container type: \":1\". Path: :2": "Неизвестный тип контейнера: \":1\". Путь: :2",
+  "Invalid configuration file format: :1": "Неверный формат конфигурационного файла: :1",
+  "Your choices: \":1\"": "Ваши выборы: \":1\"",
+
+  "### libs/container/builder.py ###": "",
+  "Directory configuration \":1\" is not valid. Errors: :2": "Конфигурация каталога \":1\" не валидна. Ошибки: :2",
+  "Configuration file \":1\" does not contain \":2\". Directory: :3": "Конфигурация файла \":1\" не содержит \":2\". Каталог: :3",
+  "Configuration file \":1\" does not contain \"content\" or file is missing. File: :2": "Конфигурация файла \":1\" не содержит \"content\" или файл отсутствует. Файл: :2",
+  "File \":1\" contains critical errors": "Файл \":1\" содержит критические ошибки",
+
+  "### libs/container/types/base.py ###": "",
+  "Property \"docker_compose\" cannot be overridden": "Свойство \"docker_compose\" нельзя переопределить",
+
+  "### helpers/dict.py ###": "",
+  "Data type \":1\" is not supported.": "Тип данных \":1\" не поддерживается.",
+  "Key \":1\" has invalid data type. Expected \":2\", got \":3\".": "Ключ \":1\" имеет неверный тип данных. Ожидается \":2\", получено \":3\".",
+  "Key \":1\" does not exist": "Ключ \":1\" не существует",
+
+  "### helpers/parser_yml.py ###": "",
+  "Invalid file format: \":1\". Path: :2": "Неверный формат файла: \":1\". Путь: :2",
+  "Key \":1\" is missing in file: \":2\". Path: :3": "Ключ \":1\" отсутствует в файле: \":2\". Путь: :3",
+
+  "### helpers/str.py ###": "",
+  "Unknown line: :1": "Неизвестная строка: :1"
+
+
+
+
+}

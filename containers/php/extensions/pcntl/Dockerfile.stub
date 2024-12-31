@@ -1,0 +1,4 @@
+#####################################
+# PHP Pcntl (Required for laravel horizon)
+#####################################
+RUN docker-php-ext-install pcntl

@@ -1,0 +1,5 @@
+#####################################
+# PHP PDO Mysqli:
+#####################################
+RUN docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install mysqli

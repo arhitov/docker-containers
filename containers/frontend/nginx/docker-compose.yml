@@ -1,0 +1,17 @@
+services:
+  nginx:
+    # container_name: nginx
+    image: 'nginx:${NGINX_VERSION:-latest}'
+    restart: '${DOCKER_CONTAINER_RESTART}'
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '${FRONTEND_PORT:-80}:80'
+      - '${FRONTEND_PORT_SSL:-443}:443'
+    volumes:
+      - './etc/nginx/nginx.conf:/etc/nginx/nginx.conf:ro'
+      - './log/nginx:/var/log/nginx'
+    networks:
+      - application-network

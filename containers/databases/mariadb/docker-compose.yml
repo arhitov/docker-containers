@@ -1,0 +1,32 @@
+services:
+  databases-mariadb:
+    # container_name: databases-mariadb
+    image: 'mariadb:${DB_MARIADB_VERSION:-latest}'
+    command: [ "--max_connections=1000" ]
+    restart: '${DOCKER_CONTAINER_RESTART}'
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    environment:
+      MARIADB_ROOT_PASSWORD: '${DB_MARIADB_ROOT_PASSWORD:-${DB_MARIADB_PASSWORD}}'
+      MARIADB_ROOT_HOST: '${DB_MARIADB_ROOT_HOST:-127.0.0.1}'
+      MARIADB_DATABASE: '${DB_MARIADB_DATABASE}'
+      MARIADB_USER: '${DB_MARIADB_USERNAME}'
+      MARIADB_PASSWORD: '${DB_MARIADB_PASSWORD}'
+    ports:
+      - '3806:3806'
+    volumes:
+      - 'databases-mariadb:/var/lib/mysql'
+    networks:
+      - application-network
+    healthcheck:
+      test:
+        - CMD
+        - mariadb-admin
+        - ping
+        - '-p${DB_MARIADB_PASSWORD}'
+      retries: 3
+      timeout: 5s
+
+volumes:
+  databases-mariadb:
+    driver: local

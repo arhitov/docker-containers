@@ -1,0 +1,17 @@
+services:
+  php-cli:
+    # container_name: application
+    build:
+      context: './'
+      dockerfile: ./docker/Dockerfile
+    restart: '${DOCKER_CONTAINER_RESTART}'
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    environment:
+      WWWUSER: '${WWWUSER}'
+      WWWGROUP: '${WWWGROUP}'
+    volumes:
+      - './:/var/www/html:cached'
+#      - './etc/php/php.ini:/usr/local/etc/php/conf.d/local.ini:ro'
+    networks:
+      - application-network

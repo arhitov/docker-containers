@@ -1,0 +1,11 @@
+name: 'MariaDB'
+type: 'database'
+dockerfile: False
+env:
+  - name: 'DB_MARIADB_VERSION'
+    default: 'latest'
+  - name: 'DB_MARIADB_ROOT_HOST'
+    default: '127.0.0.1'
+  - name: 'DB_MARIADB_DATABASE'
+  - name: 'DB_MARIADB_USERNAME'
+  - name: 'DB_MARIADB_PASSWORD'
