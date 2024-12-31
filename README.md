@@ -49,4 +49,3 @@ files: # Не обязательное. Список файлов которые
   - file: 'nginx.conf'
     to: 'etc/nginx'
 ```
-
