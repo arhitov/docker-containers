@@ -4,7 +4,6 @@ Collection of docker containers
 ## Зависимости
 - Python 3.10 и выше (включает `pkg_resources`)
 
-
 ## Структура
 ### Файл описывающий контейнер `container.yml`
 ```yaml
