@@ -3,7 +3,11 @@ type: 'database'
 dockerfile: False
 env:
   - name: 'DB_POSTGRES_VERSION'
+    group: 'PostgreSQL'
     default: 'latest'
   - name: 'DB_POSTGRES_DATABASE'
+    group: 'PostgreSQL'
   - name: 'DB_POSTGRES_USERNAME'
+    group: 'PostgreSQL'
   - name: 'DB_POSTGRES_PASSWORD'
+    group: 'PostgreSQL'

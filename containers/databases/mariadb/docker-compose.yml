@@ -12,10 +12,10 @@ services:
       MARIADB_DATABASE: '${DB_MARIADB_DATABASE}'
       MARIADB_USER: '${DB_MARIADB_USERNAME}'
       MARIADB_PASSWORD: '${DB_MARIADB_PASSWORD}'
-    ports:
-      - '3806:3806'
     volumes:
       - 'databases-mariadb:/var/lib/mysql'
+    ports:
+      - '3806:3806'
     networks:
       - application-network
     healthcheck:
