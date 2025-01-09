@@ -1,10 +1,9 @@
 env:
   - name: 'DOCKER_CONTAINER_RESTART'
     group: 'DOCKER'
-    default: 'restart'
+    default: 'always'
     enums:
       - 'no'
-      - 'restart'
       - 'always'
       - 'on-failure'
       - 'unless-stopped'
