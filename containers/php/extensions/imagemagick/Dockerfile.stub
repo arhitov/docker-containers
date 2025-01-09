@@ -1,6 +1,6 @@
 #####################################
 # PHP Imagick
 #####################################
-RUN apt-get install -y libmagickwand-dev imagemagick \
+RUN apt-get install -y wget libmagickwand-dev imagemagick \
     && pecl install imagick \
     && docker-php-ext-enable imagick
