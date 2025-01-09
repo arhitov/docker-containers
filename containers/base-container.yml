@@ -9,4 +9,4 @@ env:
       - 'unless-stopped'
   - name: 'DOCKER_NETWORK_BRIDGE_NAME'
     group: 'DOCKER'
-    default: 'app-network-bridge'
+    default: 'app-bridge'
