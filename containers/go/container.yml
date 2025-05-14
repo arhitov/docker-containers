@@ -1,0 +1,6 @@
+name: 'Go (Live-Reload)'
+type: 'application'
+
+files:
+  - file: 'Dockerfile'
+    to: 'docker'

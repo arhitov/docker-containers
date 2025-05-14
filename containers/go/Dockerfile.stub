@@ -1,0 +1,37 @@
+# Используем ARG для получения версии Go из docker-compose.yml
+# Используйте эту версию в go.mod
+# значение по умолчанию
+ARG GO_VERSION=latest
+# сохраняем ARG в ENV, чтобы было доступно в контейнере
+ENV GO_VERSION=${GO_VERSION}
+
+# Базовый образ с указанной версией Go
+FROM golang:${GO_VERSION}-alpine
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ=Europe/Moscow
+
+# Устанавливаем зависимости (если нужны)
+RUN apk add --no-cache git tzdata
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Очистить кеш перед установкой
+RUN go clean -modcache
+
+# Устанавливаем air (для live-reload)
+RUN go install github.com/air-verse/air@latest
+
+# Рабочая директория
+USER root
+WORKDIR /app
+
+# Копируем только файлы зависимостей и скачиваем их
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Копируем исходный код (если не используется volume)
+# COPY . .
+
+# Можно использовать просто `go run main.go`, но air удобнее
+CMD ["air"]
