@@ -1,6 +1,6 @@
 services:
-  databases-mariadb:
-    # container_name: databases-mariadb
+  mariadb:
+    # container_name: mariadb
     image: 'mariadb:${DB_MARIADB_VERSION:-latest}'
     command: [ "--max_connections=1000" ]
     restart: '${DOCKER_CONTAINER_RESTART}'
@@ -13,7 +13,7 @@ services:
       MARIADB_USER: '${DB_MARIADB_USERNAME}'
       MARIADB_PASSWORD: '${DB_MARIADB_PASSWORD}'
     volumes:
-      - 'databases-mariadb:/var/lib/mysql'
+      - 'mariadb:/var/lib/mysql'
     ports:
       - '3806:3806'
     networks:
@@ -28,5 +28,5 @@ services:
       timeout: 5s
 
 volumes:
-  databases-mariadb:
+  mariadb:
     driver: local

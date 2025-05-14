@@ -1,10 +1,10 @@
 services:
-  databases-postgres:
-    # container_name: databases-postgres
+  postgres:
+    # container_name: postgres
     image: 'postgres:${DB_POSTGRES_VERSION:-latest}'
     restart: '${DOCKER_CONTAINER_RESTART}'
     volumes:
-      - 'databases-postgres:/var/lib/postgresql/data'
+      - 'postgres:/var/lib/postgresql/data'
     ports:
       - '5432:5432'
     environment:
@@ -15,5 +15,5 @@ services:
       - application-network
 
 volumes:
-  databases-postgres:
+  postgres:
     driver: local
