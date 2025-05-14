@@ -1,7 +1,6 @@
 import locale
 import json
-from typing import Type
-from libs.file_systems.directory import Directory
+import os
 
 
 def trans(string: str, *args) -> str:
@@ -15,12 +14,12 @@ class Translation:
     __translations = None
 
     @classmethod
-    def set_directory_translations(cls, directory: Directory) -> Type['Translation']:
+    def set_directory_translations(cls, directory: str) -> "Translation":
         cls.__translation_dir = directory
         return cls
 
     @classmethod
-    def set_locale_lang(cls, lang: str) -> Type['Translation']:
+    def set_locale_lang(cls, lang: str) -> "Translation":
         """Установка языка
         :param lang: Example: ru_RU
         """
@@ -42,5 +41,5 @@ class Translation:
 
     @classmethod
     def load_translations(cls) -> None:
-        if (cls.__translations is None) and cls.__translation_dir.file_exists(f'{cls.get_locale_lang()}.json'):
-            cls.__translations = json.loads(cls.__translation_dir.file_get_content(f'{cls.get_locale_lang()}.json'))
+        if (cls.__translations is None) and os.path.isfile(f'{cls.__translation_dir}/{cls.get_locale_lang()}.json'):
+            cls.__translations = json.load(open(os.path.join((f'{cls.__translation_dir}/{cls.get_locale_lang()}.json')), 'r'))
